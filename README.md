@@ -223,20 +223,8 @@ Included tests:
 - dedicated Suspense streaming bonus section
 - formal accessibility audit report artifact
 
-## Repository naming suggestion
 
-Use:
 
-```txt
-frontend-assessment-wg
-```
-
-Or rename to:
-
-```txt
-frontend-assessment-olayanikan-michael
-```
-
-## Submission note suggestion
+## Submission note
 
 > I focused on building a polished, production-minded implementation of the required scope with strong URL-driven state, maintainable server/client boundaries, and practical performance decisions. With another 2 hours, I would add Cloudflare cache inspection headers, a documented accessibility audit, and broader interaction tests.
