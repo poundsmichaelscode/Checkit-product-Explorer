@@ -1,15 +1,15 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
-  "main": ".open-next/worker.js",
   "name": "frontend-assessment-wg",
-  "compatibility_date": "2026-04-04",
-  "compatibility_flags": ["nodejs_compat", "global_fetch_strictly_public"],
+  "main": ".open-next/worker.js",
+  "compatibility_date": "2026-04-05",
+  "compatibility_flags": [
+    "nodejs_compat",
+    "global_fetch_strictly_public"
+  ],
   "assets": {
     "directory": ".open-next/assets",
     "binding": "ASSETS"
-  },
-  "build": {
-    "command": "npm run build:worker"
   },
   "services": [
     {
