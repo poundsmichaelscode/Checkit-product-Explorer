@@ -1,8 +1,15 @@
 import { PAGE_SIZE } from "@/lib/constants";
 import { normalizeSearchParams, sortProducts } from "@/lib/utils";
-import type { ListingSearchParams, Product, ProductListData, ProductListResponse, ProductQuery } from "@/types/product";
+import type {
+  ListingSearchParams,
+  Product,
+  ProductListData,
+  ProductListResponse,
+  ProductQuery
+} from "@/types/product";
 
-const BASE_URL = process.env.DUMMYJSON_BASE_URL ?? "https://dummyjson.com";
+const BASE_URL =
+  (process.env.DUMMYJSON_BASE_URL || "https://dummyjson.com").replace(/\/$/, "");
 
 async function request<T>(path: string, init?: RequestInit): Promise<T> {
   const response = await fetch(`${BASE_URL}${path}`, {
@@ -21,11 +28,9 @@ async function request<T>(path: string, init?: RequestInit): Promise<T> {
 }
 
 export async function getCategories(): Promise<string[]> {
-  const response = await request<string[]>("/products/category-list", {
+  return request<string[]>("/products/category-list", {
     next: { revalidate: 3600 }
   });
-
-  return response;
 }
 
 export async function getProducts(searchParams: ListingSearchParams): Promise<ProductListData> {
@@ -80,9 +85,12 @@ async function getProductsByQuery(query: ProductQuery): Promise<ProductListData>
     };
   }
 
-  const response = await request<ProductListResponse>(`/products?limit=${PAGE_SIZE}&skip=${skip}`, {
-    next: { revalidate: 300 }
-  });
+  const response = await request<ProductListResponse>(
+    `/products?limit=${query.limit}&skip=${skip}`,
+    {
+      next: { revalidate: 300 }
+    }
+  );
 
   const items = sortProducts(response.products, query.sort);
 

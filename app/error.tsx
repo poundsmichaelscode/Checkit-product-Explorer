@@ -15,7 +15,7 @@ export default function Error({ error, reset }: { error: Error & { digest?: stri
         </span>
         <h1 className="mt-4 text-3xl font-bold tracking-tight text-ink">We couldn&apos;t load Checkit right now.</h1>
         <p className="mt-3 text-base leading-7 text-muted">
-          Please try again. If the issue persists, check your network connection or reload the page or contact customer care for support .
+          Please try again. If the issue persists, check your network connection or reload the page.
         </p>
         <div className="mt-6 flex flex-wrap gap-3">
           <button
@@ -29,7 +29,7 @@ export default function Error({ error, reset }: { error: Error & { digest?: stri
             href="/"
             className="rounded-full border border-slate-200 px-5 py-3 text-sm font-semibold text-ink transition hover:border-slate-300 hover:bg-slate-50"
           >
-            Back to Product listing
+            Back to listing
           </a>
         </div>
       </section>

@@ -5,7 +5,7 @@ export default function NotFound() {
         <span className="inline-flex rounded-full bg-slate-100 px-3 py-1 text-sm font-semibold text-slate-700">
           Not found
         </span>
-        <h1 className="mt-4 text-3xl font-bold tracking-tight text-ink">The product you requested is not Availabel.</h1>
+        <h1 className="mt-4 text-3xl font-bold tracking-tight text-ink">The product you requested does not exist.</h1>
         <p className="mt-3 text-base leading-7 text-muted">
           Head back to the catalog to continue exploring available products.
         </p>

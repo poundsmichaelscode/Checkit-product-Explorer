@@ -10,8 +10,8 @@ export function AppShell({ children }: { children: React.ReactNode }) {
               C
             </div>
             <div>
-              <p className="text-lg font-bold tracking-tight text-ink">Checkit Store</p>
-              <p className="text-xs uppercase tracking-[0.2em] text-muted">Product Content Explorer</p>
+              <p className="text-lg font-bold tracking-tight text-ink">Checkit</p>
+              <p className="text-xs uppercase tracking-[0.2em] text-muted">Content Explorer</p>
             </div>
           </Link>
           <a

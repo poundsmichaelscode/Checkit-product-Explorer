@@ -143,7 +143,7 @@ export default async function ItemDetailPage({ params }: DetailPageProps) {
               href="/"
               className="mt-6 inline-flex rounded-full bg-ink px-5 py-3 text-sm font-semibold text-white transition hover:bg-slate-800"
             >
-              Back to Product listing
+              Back to listing
             </Link>
           </section>
         </aside>

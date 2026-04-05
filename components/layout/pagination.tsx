@@ -16,7 +16,7 @@ export function Pagination({ currentPage, totalPages, params }: PaginationProps)
   return (
     <nav aria-label="Pagination" className="flex flex-col gap-4 rounded-[28px] border border-slate-200 bg-white p-5 shadow-card sm:flex-row sm:items-center sm:justify-between">
       <p className="text-sm text-muted">
-        Click nect to view the next page created by Olayenikan Michael.
+        Explore product click the next button.. Create buy Olayenikan Michael.
       </p>
       <div className="flex items-center gap-3">
         <Link

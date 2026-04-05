@@ -1,6 +1,6 @@
-# Checkit Store
+# Checkit
 
-A production-quality **Content Product Explorer** built for a Frontend Engineer assessment using **Next.js App Router**, **TypeScript**, **Tailwind CSS**, and **DummyJSON** as the public API source.
+A production-quality **Content Explorer** built for a Frontend Engineer assessment using **Next.js App Router**, **TypeScript**, **Tailwind CSS**, and **DummyJSON** as the public API source.
 
 ## Why this API
 
@@ -24,7 +24,7 @@ I chose **DummyJSON Products** because it is stable, free, image-rich, and suppo
 ## Quick start
 
 ```bash
-git clone <>
+git clone <your-repo-url>
 cd frontend-assessment-wg
 npm install
 npm run dev
@@ -143,6 +143,32 @@ The listing itself stays server-rendered. Only the filter controls use client-si
 - Vercel remains a fallback option if Cloudflare account setup is unavailable during review
 
 ## Cloudflare deployment notes
+
+### Cloudflare Workers Builds setup
+
+If you connect this repo to **Cloudflare Workers Builds**, set the **Deploy command** to:
+
+```bash
+npm run deploy
+```
+
+Do **not** use `npx wrangler deploy` as the dashboard deploy command for this repo. The OpenNext docs recommend using the `opennextjs-cloudflare` CLI for Next.js apps on Workers, and Workers Builds does not honor custom build steps inside `wrangler.jsonc`. That means `wrangler deploy` can run before `.open-next/assets` exists, which causes the static assets detection error.
+
+Recommended Workers Builds settings:
+
+```text
+Build command: npm install
+Deploy command: npm run deploy
+```
+
+For local manual deployment, you can also run:
+
+```bash
+npm run deploy:wrangler
+```
+
+This explicitly builds the OpenNext output first and then runs Wrangler.
+
 
 This repo is pre-configured for **Cloudflare Workers** with:
 
